@@ -9,20 +9,15 @@ let brushColor = 'black';
 
 function draw(e) {
     if (!isDrawing) return;
-    context.strokeStyle = brushColor === 'eraser' ? 'white' : brushColor;
     context.lineWidth = document.getElementById('slider').value;
     context.lineJoin = 'round';
     context.lineCap = 'round';
+    context.strokeStyle = brushColor === 'eraser' ? 'white' : brushColor; // Set stroke style based on brush color or white for eraser
     context.beginPath();
     context.moveTo(lastX, lastY);
     context.lineTo(e.offsetX, e.offsetY);
     context.stroke();
     [lastX, lastY] = [e.offsetX, e.offsetY];
-    if (brushColor === 'eraser') {
-        context.globalCompositeOperation = 'destination-out';
-    } else {
-        context.globalCompositeOperation = 'source-over';
-    }
 }
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
@@ -39,7 +34,7 @@ document.querySelectorAll('.btn-color').forEach(button => {
 });
 
 document.getElementById('new').addEventListener('click', () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 document.getElementById('slider').addEventListener('input', () => {
