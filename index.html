@@ -1,58 +1,63 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Paint!</title>
   <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-  <style type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <style>
     #pink {
-      background-color:#F50057;
-      border-color:#F50057;
+      background-color: #F50057;
+      border-color: #F50057;
     }
+
     #blue {
-      background-color:#2979FF;
-      border-color:#2979FF;
+      background-color: #2979FF;
+      border-color: #2979FF;
     }
+
     #yellow {
-      background-color:#FFD600;
-      border-color:#FFD600;
+      background-color: #FFD600;
+      border-color: #FFD600;
     }
+
     #black {
-      background-color:#000000;
-      border-color:#000000;
+      background-color: #000000;
+      border-color: #000000;
     }
+
     i.white {
-      color:white;
+      color: white;
     }
 
     div#controls {
-      width:960px;
-      margin:0 auto;
-      text-align:center;
-      margin-top:20px;
+      width: 960px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 20px;
     }
 
+    div#drawingArea {
+      width: 960px;
+      margin: 0 auto;
+    }
 
-   div#drawingArea {
-     width:960px;
-     margin:0 auto;
-   }
-
-   h1 {
-     font-size:34px;
-     text-align:center;
-     margin-top:60px;
-   }
+    h1 {
+      font-size: 34px;
+      text-align: center;
+      margin-top: 60px;
+    }
   </style>
-
 </head>
-<!-- https://javascript.info/mouse-events-basics -->
-<body>
 
-  <h1> Let's Paint! </h1>
+<body>
+  <h1>Let's Paint!</h1>
 
   <div id="drawingArea">
-    <canvas id="main" width="960" height="500" style="border:1px solid #ccc;">
+    <canvas id="main" width="960" height="500" style="border: 1px solid #ccc;">
       Here is my canvas.
     </canvas>
   </div>
@@ -66,16 +71,16 @@
       <i class="fas fa-eraser"></i>
     </button>
 
-    <button id="black" class="btn btn-action" >
+    <button id="black" class="btn btn-action btn-color">
       <i class="fas fa-paint-brush white"></i>
     </button>
-    <button id="pink" class="btn btn-action" >
+    <button id="pink" class="btn btn-action btn-color">
       <i class="fas fa-paint-brush white"></i>
     </button>
-    <button id="blue" class="btn btn-action">
+    <button id="blue" class="btn btn-action btn-color">
       <i class="fas fa-paint-brush white"></i>
     </button>
-    <button id="yellow" class="btn btn-action">
+    <button id="yellow" class="btn btn-action btn-color">
       <i class="fas fa-paint-brush white"></i>
     </button>
 
@@ -86,12 +91,7 @@
     <span id="brushSize"></span>
   </div>
 
-
-
-
   <div id="log"></div>
-
-
 
   <script src="index.js"></script>
 </body>
