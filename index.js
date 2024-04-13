@@ -37,6 +37,10 @@ document.getElementById('new').addEventListener('click', () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
 });
 
+document.getElementById('erase').addEventListener('click', () => {
+    brushColor = 'eraser'; // Set brush color to eraser
+});
+
 document.getElementById('slider').addEventListener('input', () => {
     document.getElementById('brushSize').textContent = document.getElementById('slider').value;
 });  
