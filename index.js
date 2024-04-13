@@ -24,10 +24,24 @@ function draw(e) {
         context.globalCompositeOperation = 'source-over';
     }
 }
-
+canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false);
 
 document.querySelectorAll('.btn-color').forEach(button => {
     button.addEventListener('click', () => {
         brushColor = button.id;
     });
 });
+
+document.getElementById('new').addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+document.getElementById('slider').addEventListener('input', () => {
+    document.getElementById('brushSize').textContent = document.getElementById('slider').value;
+});  
